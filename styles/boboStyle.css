@@ -1,0 +1,7 @@
+tr {
+  height: 150px;
+}
+
+td:hover {
+  background: #EEEEFF;
+}
