@@ -1,3 +1,27 @@
+body {
+  font-family: Courier;
+  font-size: 9pt;
+}
+div#paneFrame {
+  position: absolute;
+  top: 24;
+  left: 22;
+  border: 1px solid black;
+  width: 960px;
+  height: 720px;
+  padding: 0px;
+  margin: 0 px;
+}
+
+div#splash {
+  border: 0px solid black;
+  width: 100%;
+  text-align: center;
+}
+div.pane {
+  width: 100%;
+  position: relative;
+}
 tr {
   height: 150px;
 }

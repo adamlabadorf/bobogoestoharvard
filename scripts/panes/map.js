@@ -1,6 +1,7 @@
 define(function(require) {
 
   var paneManager;
+  var paneUtil = require('../paneUtil');
 
   function init() {
   }
@@ -18,7 +19,18 @@ define(function(require) {
     $('div#map').show();
   }
 
-  init()
+  var dorm = [" ______________",
+              "/____________ /|",
+              "|   _    _   | |",
+              "|  | |  | |  | |",
+              "|  |_|  |_|  | |",
+              "|     __     | |",
+              "|    |  |    | /",
+              "|____|__|____|/"]
+
+  paneUtil.createArtDiv(dorm.join('\n'),'dorm','map',60,60);
+
+  init();
 
   return {
     draw: draw,
