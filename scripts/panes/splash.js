@@ -1,6 +1,7 @@
 define(function(require) {
 
   var paneManager;
+  var bobo = require('../bobo');
 
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
@@ -19,6 +20,8 @@ define(function(require) {
     $('button#goToMap').click(
       function() { me.paneManager.activatePane('map') }
     );
+    $('#cheat_givePoint').click(
+        function() { bobo.givePoint(); });
   }
 
   init();

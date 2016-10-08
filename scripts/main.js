@@ -2,6 +2,7 @@ define(function (require) {
   var boboButt = require('./boboButt');
   var bobo = require('./bobo');
   var panes = require('./paneManager');
+  var statsView = require('./boStatistics');
 
   function _drinkABeer() {
     console.log("BoBo is gettin loaded");
@@ -17,6 +18,7 @@ define(function (require) {
     boboButt.init();
     bobo.init();
     panes.init();
+    statsView.init();
   }
 
   function main() {

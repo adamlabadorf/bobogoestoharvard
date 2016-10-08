@@ -1,11 +1,15 @@
-tr {
+#mapTable tr {
   height: 150px;
 }
 
-td:hover {
+#mapTable td:hover {
   background: #EEEEFF;
 }
 
 .hidden {
   display: none
+}
+
+#boStastics {
+    background: #EEEEEE;
 }
