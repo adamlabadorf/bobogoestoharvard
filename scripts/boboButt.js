@@ -1,6 +1,5 @@
 define(function () {
   function init() {
-  
   }
         
   function sayHi() {
@@ -8,8 +7,8 @@ define(function () {
   }
 
     return {
-        init: init,
-        sayHi: sayHi
+      init: init,
+      sayHi: sayHi
     };
 });
 

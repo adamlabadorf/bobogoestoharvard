@@ -1,24 +1,28 @@
 define(function (require) {
   var boboButt = require('./boboButt');
-  var model = require('./model');
+  var bobo = require('./bobo');
+  var panes = require('./paneManager');
 
   function _drinkABeer() {
     console.log("BoBo is gettin loaded");
-    console.log("Bobo has ", model.state()['boboPoints'], " points!");
+    console.log("Bobo has ", bobo.state()['boboPoints'], " points!");
   }
 
   function _clickCell(row, col) {
     console.log("Clicked on: ", row, col);
-    model.givePoint();
+    bobo.givePoint();
   }
 
   function _initModules() {
     boboButt.init();
-    model.init();
+    bobo.init();
+    panes.init();
   }
 
   function main() {
     _initModules();
+
+    panes.activatePane('splash');
 
     $("#drinkABeer").click(_drinkABeer);
     boboButt.sayHi()
@@ -28,4 +32,3 @@ define(function (require) {
 
   main();
 });
-

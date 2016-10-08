@@ -5,3 +5,7 @@ tr {
 td:hover {
   background: #EEEEFF;
 }
+
+.hidden {
+  display: none
+}
