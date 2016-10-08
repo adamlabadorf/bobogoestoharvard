@@ -3,6 +3,7 @@ define(function (require) {
   var bobo = require('./bobo');
   var panes = require('./paneManager');
   var statsView = require('./boStatistics');
+  var paneUtil = require('./paneUtil');
 
   function _drinkABeer() {
     console.log("BoBo is gettin loaded");
@@ -24,12 +25,13 @@ define(function (require) {
   function main() {
     _initModules();
 
+    paneUtil.setGridVisible(true);
+
     panes.activatePane('splash');
 
     $("#drinkABeer").click(_drinkABeer);
     boboButt.sayHi()
 
-    $("#cell_00").click(function() { _clickCell(0,0); });
   }
 
   main();

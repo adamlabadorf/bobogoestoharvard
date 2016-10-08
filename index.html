@@ -6,72 +6,58 @@
 </head>
 <body>
 
-<div id="boStastics">
-    <table width=100% border=1>
-        <tr>
-            <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-            <td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
-            <td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-            <td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-            <td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
-        </tr>
-    </table>
+<div id='grid' class="verbatim">
 </div>
 
+<div id='paneFrame'>
 
-<div id="splash">
-  <h1> BoBo goes to Harvard </h1>
+    <div class='pane' id="splash">
+      <h1> BoBo goes to Harvard </h1>
 
-  Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
+      Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
+      <br/>
+      <br/>
 
-  <button id="goToMap">Map</button>
-  <button id="cheat_givePoint">Give Point</button>
+      <button id="goToMap">Map</button>
+    </div>
+
+    <div id="map">
+    </div>
+
+    <div id="boStastics">
+        <table width=100% border=1>
+            <tr>
+                <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
+                <td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
+                <td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
+                <td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
+                <td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="boBar">
+        Welcome to the BoBar, what would you like to do?
+
+        <h2> Pick a poison to purchase</h2>
+        <table border="1">
+            <tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
+            <tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
+            <tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
+            <tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
+            <tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
+            <tr><td> <button id="boBar_good">Drink to remember the good times</button> </td><td> 30 </td></tr>
+            <tr><td> <button id="boBar_bad">Drink to remember the bad times</button> </td><td> 1 </td></tr>
+        </table>
+        <h2>Socialize</h2>
+        <table>
+            <button id="boBar_game_line">Try a BoBo line</button>
+            <button id="boBar_game_tender">Talk to the 'tender</button>
+            <button id="boBar_game_darts">Play some BoBo darts</button>
+        </table>
+    </div>
+
 </div>
-
-
-<div id="map">
-  <button id="drinkABeer">Drink it!</button>
-
-  <table id="mapTable" border="1" width=100% >
-    <tr>
-      <td id="cell_00"></td>
-      <td id="cell_01"></td>
-      <td></td>
-    </tr><tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr><tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-</div>
-
-<div id="boBar">
-    Welcome to the BoBar, what would you like to do?
-
-    <h2> Pick a poison to purchase</h2>
-    <table border="1">
-        <tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
-        <tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
-        <tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
-        <tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
-        <tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
-        <tr><td> <button id="boBar_good">Drink to remember the good times</button> </td><td> 30 </td></tr>
-        <tr><td> <button id="boBar_bad">Drink to remember the bad times</button> </td><td> 1 </td></tr>
-    </table>
-    <h2>Socialize</h2>
-    <table>
-        <button id="boBar_game_line">Try a BoBo line</button>
-        <button id="boBar_game_tender">Talk to the 'tender</button>
-        <button id="boBar_game_darts">Play some BoBo darts</button>
-    </table>
-</div>
-
-
-</table>
 
 </body>
 </html>
