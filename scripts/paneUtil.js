@@ -38,6 +38,7 @@ define(function(require) {
     var div = document.createElement("div"),
         text = text.join('\n');
     $(div).attr('id',artId);
+    $(div).attr('class','clickableArt');
     $(div).html(text);
     $('#'+targetId).append(div);
     placeVerbatimDiv(x,y,artId);

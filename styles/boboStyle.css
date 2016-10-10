@@ -31,3 +31,11 @@ div.pane {
 #boStastics {
     background: #EEEEEE;
 }
+
+.clickableArt:hover {
+    cursor: pointer;
+}
+
+.clickableArt:hover {
+    background: #EEEEEE;
+}
