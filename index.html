@@ -6,71 +6,74 @@
 </head>
 <body>
 
-<div id='grid' class='verbatim'>
-</div>
+<div id='gameFrame'>
 
-<div id='paneFrame'>
+	<div id='boStastics'>
+		<table width=100% border=1>
+		    <tr>
+			<td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
+			<td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
+			<td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
+			<td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
+		    </tr>
+		    <tr>
+			<td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
+			<td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
+			<td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
+			<td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
+		    </tr>
+		</table>
+	</div>
 
-    <div class='pane' id='splash'>
-      <h1> BoBo goes to Harvard </h1>
+	<div id='paneFrame'>
 
-      Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
-      <br/>
-      <br/>
+            <div id='grid' class='verbatim'></div>
 
-      <button id='goToMap'>Map</button>
-      <button id='cheat_givePoint'>CHEAT: Give point</button>
-    </div>
+	    <div class='pane' id='splash'>
+	      <h1> BoBo goes to Harvard </h1>
 
-    <div id="map">
-    </div>
+	      Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
+	      <br/>
+	      <br/>
 
-    <div class='pane' id='boStastics'>
-        <table width=100% border=1>
-            <tr>
-                <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-                <td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
-                <td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-                <td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-            </tr>
-            <tr>
-                <td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
-                <td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
-                <td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
-                <td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
-            </tr>
-        </table>
-    </div>
+	      <button id='goToMap'>Map</button>
+	      <button id='cheat_givePoint'>CHEAT: Give point</button>
+	    </div>
 
-    <div class='pane' id='boBar'>
-        Welcome to the BoBar, what would you like to do?
+	    <div id="map">
+	    </div>
 
-        <h2> Pick a poison to purchase</h2>
-        <table border='1'>
-            <tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
-            <tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
-            <tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
-            <tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
-            <tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
-            <tr><td> <button id="boBar_good">Drink to remember the best times</button> </td><td> 30 </td></tr>
-            <tr><td> <button id="boBar_bad">Drink to remember the worst times</button> </td><td> 1 </td></tr>
-        </table>
-        <h2>Socialize</h2>
-        <table>
-            <button id='boBar_game_line'>Try a BoBo line</button>
-            <button id='boBar_game_tender'>Talk to the 'tender</button>
-            <button id='boBar_game_darts'>Play some BoBo darts</button>
-        </table>
-    </div>
+	    <div class='pane' id='boBar'>
+		Welcome to the BoBar, what would you like to do?
 
-    <div id="boLibrary">
-        Welcome to the BoLibrary, what would you like to do?
+		<h2> Pick a poison to purchase</h2>
+		<table border='1'>
+		    <tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
+		    <tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
+		    <tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
+		    <tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
+		    <tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
+		    <tr><td> <button id="boBar_good">Drink to remember the best times</button> </td><td> 30 </td></tr>
+		    <tr><td> <button id="boBar_bad">Drink to remember the worst times</button> </td><td> 1 </td></tr>
+		</table>
+		<h2>Socialize</h2>
+		<table>
+		    <button id='boBar_game_line'>Try a BoBo line</button>
+		    <button id='boBar_game_tender'>Talk to the 'tender</button>
+		    <button id='boBar_game_darts'>Play some BoBo darts</button>
+		</table>
+	    </div>
 
-        <h2> What to do? </h2>
-        <button id="boLibrary_study">Study</button>
-        <button id="boLibrary_readForFun">Read for fun</button>
-    </div>
+	    <div id="boLibrary">
+		Welcome to the BoLibrary, what would you like to do?
 
+		<h2> What to do? </h2>
+		<button id="boLibrary_study">Study</button>
+		<button id="boLibrary_readForFun">Read for fun</button>
+	    </div>
+
+
+	</div>
 
 </div>
 

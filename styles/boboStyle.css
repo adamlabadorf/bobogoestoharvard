@@ -2,7 +2,7 @@ body {
   font-family: Courier;
   font-size: 9pt;
 }
-div#paneFrame {
+div#gameFrame {
   position: absolute;
   top: 24;
   left: 22;
@@ -10,7 +10,24 @@ div#paneFrame {
   width: 960px;
   height: 720px;
   padding: 0px;
-  margin: 0 px;
+  margin: 0px 0px auto 0px;
+}
+div#paneFrame {
+  position: relative;
+  width:100%;
+  height:100%;
+  border: 1px solid rgba(255,255,255,0);
+}
+
+div#grid {
+  position: relative;
+  top: -10px;
+  left: -10px;
+  color: grey;
+}
+
+div#boStatistics {
+  
 }
 
 div#splash {
