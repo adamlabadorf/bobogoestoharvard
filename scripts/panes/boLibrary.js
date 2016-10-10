@@ -3,6 +3,7 @@ define(function(require) {
   var paneManager;
   var bobo = require('bobo');
   var charmToMineForFunReading = 10;
+  var timeSpentInLibrary = 0;
 
   function init() {
   }
@@ -21,6 +22,14 @@ define(function(require) {
 
   function draw() {
     $('div#boLibrary').show();
+  }
+
+  function tick() {
+    timeSpentInLibrary += 1;
+    if(timeSpentInLibrary % 3 == 0) {
+      bobo.changeStat('boCharm', -1);
+      bobo.changeStat('boKnowlege', 1);
+    }
   }
 
   function _study() {
@@ -107,6 +116,7 @@ define(function(require) {
   return {
     draw: draw,
     hide: hide,
-    setPaneManager: setPaneManager
+    setPaneManager: setPaneManager,
+    tick: tick
   };
 });

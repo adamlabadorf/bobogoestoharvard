@@ -28,11 +28,15 @@ define(function(require) {
     $('div#map').show();
   }
 
+  function tick() {
+  }
+
   init();
 
   return {
     draw: draw,
     hide: hide,
-    setPaneManager: setPaneManager
+    setPaneManager: setPaneManager,
+    tick: tick
   };
 });

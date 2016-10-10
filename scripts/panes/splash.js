@@ -29,11 +29,15 @@ define(function(require) {
 
   }
 
+  function tick() {
+  }
+
   init();
 
   return {
     draw: draw,
     hide: hide,
-    setPaneManager: setPaneManager
+    setPaneManager: setPaneManager,
+    tick: tick
   };
 });

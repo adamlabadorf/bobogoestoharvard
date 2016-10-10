@@ -28,8 +28,6 @@ define(function(require) {
 
   placeVerbatimDiv = function(x,y,divId) {
     elem = $('#'+divId);
-    console.log(divId);
-    console.log(elem);
     elem.html(verbatimText(elem[0].innerHTML));
     placeDiv(x,y,divId);
   }
