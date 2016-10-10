@@ -20,9 +20,9 @@ define(function(require) {
     $("#boStat_boDrunkitude").text(bobo.state('boDrunkitude'));
 
     if(delta > 0) {
-        $("#boCell_" + stat).css('background', '#AAFFAA');
+        $("#boCell_" + stat).css('background', '#008800');
     } else {
-        $("#boCell_" + stat).css('background', '#FFAAAA');
+        $("#boCell_" + stat).css('background', '#880000');
     }
     setTimeout(function() {
             $("#boCell_" + stat).css('background', '');
