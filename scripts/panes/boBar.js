@@ -6,22 +6,24 @@ define(function(require) {
   }
 
   function setPaneManager(paneManager) {
-    this.paneManager = paneManager;
+     this.paneManager = paneManager;
+     var mePanes = this.paneManager;
+     $("#boBar_exit").click(function() { mePanes.activatePane('map'); });
   }
-
- function hide() {
-    $('div#boBar').hide();
- }
-
- function draw() {
-    $('div#boBar').show();
+ 
+  function hide() {
+     $('div#boBar').hide();
   }
-
-  init()
-
-  return {
-    draw: draw,
-    hide: hide,
-    setPaneManager: setPaneManager
-  };
+ 
+  function draw() {
+     $('div#boBar').show();
+   }
+ 
+   init()
+ 
+   return {
+     draw: draw,
+     hide: hide,
+     setPaneManager: setPaneManager
+   };
 });

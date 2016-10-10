@@ -8,6 +8,7 @@ define(function(require) {
     paneUtil.createArtDiv(art['map']['dorm'],'dorm','map',60,30);
     paneUtil.createArtDiv(art['map']['bar'],'bar','map',30,20);
     paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,10);
+    paneUtil.createArtDiv(art['map']['library'],'library','map',30,30);
   }
 
 
@@ -15,7 +16,7 @@ define(function(require) {
     this.paneManager = paneManager;
     var mePanes = this.paneManager;
     $("#bar").click(function() { mePanes.activatePane('boBar'); });
-    $("#boLibrary").click(function() { mePanes.activatePane('boLibrary'); });
+    $("#library").click(function() { mePanes.activatePane('boLibrary'); });
   }
 
  function hide() {

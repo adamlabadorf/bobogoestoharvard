@@ -7,6 +7,8 @@ define(function(require) {
 
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
+    var mePanes = this.paneManager;
+    $("#boLibrary_exit").click(function() { mePanes.activatePane('map'); });
   }
 
  function hide() {
