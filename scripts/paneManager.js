@@ -6,6 +6,8 @@ define(function(require) {
 
   initPanes = function() {
     panes['splash'] = require('panes/splash');
+    panes['boBar'] = require('panes/boBar');
+    panes['boLibrary'] = require('panes/boLibrary');
     panes['map'] = require('panes/map');
 
     for (paneName in panes) {

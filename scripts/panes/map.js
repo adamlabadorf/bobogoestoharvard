@@ -4,10 +4,16 @@ define(function(require) {
   var paneUtil = require('../paneUtil');
 
   function init() {
+    console.log(this.paneManager);
   }
 
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
+
+    var mePanes = this.paneManager;
+    $("#boBar").click(function() { mePanes.activatePane('boBar'); });
+    $("#boLibrary").click(function() { mePanes.activatePane('boLibrary'); });
+
   }
 
  function hide() {
