@@ -2,18 +2,20 @@ define(function(require) {
 
   var paneManager;
   var paneUtil = require('../paneUtil');
+  var art = require('../artwork');
 
   function init() {
-    console.log(this.paneManager);
+    paneUtil.createArtDiv(art['map']['dorm'],'dorm','map',60,30);
+    paneUtil.createArtDiv(art['map']['bar'],'bar','map',30,20);
+    paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,10);
   }
+
 
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
-
     var mePanes = this.paneManager;
-    $("#boBar").click(function() { mePanes.activatePane('boBar'); });
+    $("#bar").click(function() { mePanes.activatePane('boBar'); });
     $("#boLibrary").click(function() { mePanes.activatePane('boLibrary'); });
-
   }
 
  function hide() {
@@ -21,20 +23,8 @@ define(function(require) {
  }
 
  function draw() {
-    $('#cell_00').text();
     $('div#map').show();
   }
-
-  var dorm = [" ______________",
-              "/____________ /|",
-              "|   _    _   | |",
-              "|  | |  | |  | |",
-              "|  |_|  |_|  | |",
-              "|     __     | |",
-              "|    |  |    | /",
-              "|____|__|____|/"]
-
-  paneUtil.createArtDiv(dorm.join('\n'),'dorm','map',60,60);
 
   init();
 

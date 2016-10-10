@@ -5,6 +5,11 @@ define(function (require) {
   var statsView = require('./boStatistics');
   var paneUtil = require('./paneUtil');
 
+  function _clickCell(row, col) {
+    console.log('Clicked on: ', row, col);
+    bobo.givePoint();
+  }
+
   function _initModules() {
     bobo.init();
     boboButt.init();
