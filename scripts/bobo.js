@@ -3,15 +3,22 @@ define(function () {
   var _modelObservers = []
 
   function init() {
-    _state['boboPoints'] = 1;
+    _state['boPoints'] = 0;
+    _state['boBucks'] = 100;
+    _state['boConquests'] = 0;
+    _state['boAcademicCredits'] = 0;
+    _state['boStrength'] = 50;
+    _state['boCharm'] = 50;
+    _state['boDrunkitude'] = 0;
+    _state['boTurn'] = 0;
   }
 
   function state() {
     return _state;
   }
 
-  function givePoint() {
-    _state['boboPoints'] += 1;
+  function changeStat(label, delta) {
+    _state[label] += delta;
     _invokeModelObservers();
   }
 
@@ -25,11 +32,10 @@ define(function () {
     }
   }
 
-
     return {
         init: init,
         state: state,
-        givePoint: givePoint,
+        changeStat: changeStat,
         onModelUpdate: onModelUpdate
     };
 });
