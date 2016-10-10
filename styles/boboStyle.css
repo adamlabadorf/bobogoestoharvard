@@ -4,7 +4,7 @@ body {
 }
 div#gameFrame {
   position: absolute;
-  top: 24;
+  top: 84;
   left: 22;
   border: 1px solid black;
   width: 960px;
@@ -41,6 +41,12 @@ div.pane {
   position: relative;
   display: none;
 }
+
+div.contentPane {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
 
 .hidden {
   display: none

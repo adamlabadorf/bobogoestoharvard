@@ -1,6 +1,8 @@
 define(function(require) {
 
   var paneManager;
+  var bobo = require('bobo');
+  var charmToMineForFunReading = 10;
 
   function init() {
   }
@@ -10,12 +12,14 @@ define(function(require) {
     var mePanes = this.paneManager;
     $("#boLibrary_exit").click(function() { mePanes.activatePane('map'); });
     $("#boLibrary_study").click(_study);
+    $("#boLibrary_readForFun").click(_readForFun);
   }
- function hide() {
-    $('div#boLibrary').hide();
- }
 
- function draw() {
+  function hide() {
+    $('div#boLibrary').hide();
+  }
+
+  function draw() {
     $('div#boLibrary').show();
   }
 
@@ -77,14 +81,25 @@ define(function(require) {
             if(i == answer) {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoCORRECT!!!!</h2>');
+                  bobo.changeStat('boKnowlege', 5);
+                  bobo.changeStat('boTurn', 1);
               });
             } else {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoWRONG!!!!</h2>');
+                  bobo.changeStat('boTurn', 1);
               });
             }
           }
       });
+  }
+
+  function _readForFun() {
+    if(charmToMineForFunReading > 0) {
+      bobo.changeStat('boCharm', 1);
+      charmToMineForFunReading -= 1;
+    }
+    bobo.changeStat('boTurn', 1);
   }
 
   init()

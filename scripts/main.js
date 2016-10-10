@@ -4,6 +4,7 @@ define(function (require) {
   var panes = require('./paneManager');
   var statsView = require('./boStatistics');
   var paneUtil = require('./paneUtil');
+  var msg = require('./messages');
 
   function _clickCell(row, col) {
     console.log('Clicked on: ', row, col);
@@ -15,9 +16,13 @@ define(function (require) {
     boboButt.init();
     panes.init();
     statsView.init();
+    msg.init();
   }
 
   function main() {
+    x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(x.slice(1, x.length));
+
     _initModules();
     paneUtil.setGridVisible(true);
     panes.activatePane('splash');

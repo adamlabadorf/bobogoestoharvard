@@ -21,8 +21,12 @@ define(function(require) {
       function() { me.paneManager.activatePane('map') }
     );
     $('#cheat_givePoint').click(
-        function() { bobo.changeStat(); }
+        function() { bobo.changeStat('boPoints', 1); }
     );
+    $('#cheat_giveCharm').click(
+        function() { bobo.changeStat('boCharm', 1); }
+    );
+
   }
 
   init();

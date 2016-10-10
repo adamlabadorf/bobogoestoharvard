@@ -6,24 +6,35 @@
 </head>
 <body>
 
+<div id='messageFrame'>
+</div>
+
 <div id='gameFrame'>
 
 	<div id='boStastics'>
 		<table width=100% border=1>
 		    <tr>
-			<td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-			<td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
-			<td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
+			<td id="boCell_boPoints">
+                <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
+			<td id="boCell_boTurn">
+                <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
+			<td id="boCell_boBucks">
+                <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
 		    </tr>
 		    <tr>
-			<td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
-			<td> <b>BoKnowledge:</b> <span id="boStat_boStrength"> </span> </td>
-
-			<td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
+			<td id="boCell_boCharm">
+                <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
+			<td id="boCell_boKnowlege">
+                <b>BoKnowledge:</b> <span id="boStat_boKnowlege"> </span> </td>
+			<td id="boCell_boStrength">
+                <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
 		    </tr>
-			<td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-			<td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-			<td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
+			<td id="boCell_boConquests">
+                <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
+			<td id="boCell_boAcademicCredits">
+                <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
+			<td id="boCell_boDrunkitude">
+                <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
 		    <tr>
 		    </tr>
 		</table>
@@ -33,7 +44,7 @@
 
         <div id='grid' class='verbatim'></div>
 
-        <div class='pane' id='splash'>
+        <div class='pane ' id='splash'>
           <h1> BoBo goes to Harvard </h1>
 
           Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
@@ -42,12 +53,13 @@
 
           <button id='goToMap'>Map</button>
           <button id='cheat_givePoint'>CHEAT: Give point</button>
+          <button id='cheat_giveCharm'>CHEAT: Give charm</button>
         </div>
 
         <div id="map">
         </div>
 
-        <div class='pane' id='boStastics'>
+        <div class='pane contentPane' id='boStastics'>
             <table width=100% border=1>
                 <tr>
                     <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
@@ -64,7 +76,7 @@
             </table>
         </div>
 
-        <div class='pane' id='boBar'>
+        <div class='pane contentPane' id='boBar'>
             Welcome to the BoBar, what would you like to do?
             <button id="boBar_exit">Exit</button>
 
@@ -86,7 +98,7 @@
             </table>
         </div>
 
-        <div id="boLibrary">
+        <div class='pane contentPane'id="boLibrary">
             Welcome to the BoLibrary, what would you like to do?
 
             <h2> What to do? </h2>
