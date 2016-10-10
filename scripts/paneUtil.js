@@ -50,7 +50,7 @@ define(function(require) {
     grid_ones = Array();
     grid_tens = Array();
     max_grid_size = 134;
-    for(i=0; i<max_grid_size; i++) {
+    for(i=2; i<max_grid_size; i++) {
       if(i%10 == 0) {
         grid_tens.push(Math.round(i/10));
       } else if(i%10 == 1 && i>100) {

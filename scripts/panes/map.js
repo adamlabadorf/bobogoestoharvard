@@ -9,6 +9,7 @@ define(function(require) {
     paneUtil.createArtDiv(art['map']['bar'],'bar','map',30,20);
     paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,10);
     paneUtil.createArtDiv(art['map']['library'],'library','map',30,30);
+    paneUtil.createArtDiv(art['map']['frat'],'frat','map',5,2);
   }
 
 
