@@ -1,4 +1,5 @@
 define(function(require) {
+
   String.prototype.replaceAll = function(search, replace) {
     if (replace === undefined) {
         return this.toString();
@@ -7,13 +8,15 @@ define(function(require) {
   }
 
   verbatimText = function(text) {
-    var verbText = text;
-    var replaces = [['\n','<br/>'],[' ','&nbsp']];
+    var verbText, replaces;
+    verbText = text;
+    replaces = [['\n','<br/>'],[' ','&nbsp']];
     for(i in replaces) {
       verbText = verbText.replaceAll(replaces[i][0],replaces[i][1])
     }
     return verbText;
   }
+
   placeDiv = function(x,y,divId) {
     elem = $('#'+divId)
     elem.css({
@@ -22,24 +25,30 @@ define(function(require) {
       ,'left': x*7
     });
   }
+
   placeVerbatimDiv = function(x,y,divId) {
-    elem = $('#'+divId)
-    elem[0].innerHTML = verbatimText(elem[0].innerHTML);
+    elem = $('#'+divId);
+    console.log(divId);
+    console.log(elem);
+    elem.html(verbatimText(elem[0].innerHTML));
     placeDiv(x,y,divId);
   }
 
   createArtDiv = function(text,artId,targetId,x=0,y=0) {
-    console.log('createArtDiv');
-    console.log($('#'+targetId));
-    $('#'+targetId).append("<div></div>").attr('id',artId);
-    //placeVerbatimDiv(x,y,artId);
+    var div = document.createElement("div"),
+        text = text.join('\n');
+    $(div).attr('id',artId);
+    $(div).html(text);
+    $('#'+targetId).append(div);
+    placeVerbatimDiv(x,y,artId);
   }
 
   createGrid = function() {
-    var elem = $('#grid')[0];
-    var grid_ones = Array();
-    var grid_tens = Array();
-    var max_grid_size = 134;
+    var elem, grid_ones, grid_tens, max_grid_size;
+    elem = $('#grid')[0];
+    grid_ones = Array();
+    grid_tens = Array();
+    max_grid_size = 134;
     for(i=0; i<max_grid_size; i++) {
       if(i%10 == 0) {
         grid_tens.push(Math.round(i/10));
@@ -72,7 +81,6 @@ define(function(require) {
     }
   }
 
-  //placeVerbatimDiv(3,19,'dorm');
   setGridVisible();
 
   return {

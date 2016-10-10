@@ -6,12 +6,12 @@ define(function (require) {
   var paneUtil = require('./paneUtil');
 
   function _drinkABeer() {
-    console.log("BoBo is gettin loaded");
-    console.log("Bobo has ", bobo.state()['boboPoints'], " points!");
+    console.log('BoBo is gettin loaded');
+    console.log('Bobo has ', bobo.state()['boboPoints'], ' points!');
   }
 
   function _clickCell(row, col) {
-    console.log("Clicked on: ", row, col);
+    console.log('Clicked on: ', row, col);
     bobo.givePoint();
   }
 
@@ -29,7 +29,7 @@ define(function (require) {
 
     panes.activatePane('splash');
 
-    $("#drinkABeer").click(_drinkABeer);
+    $('#drinkABeer').click(_drinkABeer);
     boboButt.sayHi()
 
   }
