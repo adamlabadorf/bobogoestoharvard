@@ -2,21 +2,28 @@ body {
   font-family: Courier;
   font-size: 9pt;
 }
+
 div#gameFrame {
-  position: absolute;
-  top: 84;
-  left: 22;
   border: 1px solid black;
   width: 960px;
   height: 720px;
   padding: 0px;
   margin: 0px 0px auto 0px;
 }
+
+
+table tbody tr td {
+    border-width: 3px;
+    background: #333;
+    background-color: #333;
+    color: #eee;
+    padding: 2px;
+}
+
 div#paneFrame {
   position: relative;
-  width:100%;
-  height:100%;
-  border: 1px solid rgba(255,255,255,0);
+  height: 540px;
+  border: 1px solid rgba(255,255,0,255);
 }
 
 div#grid {
@@ -27,17 +34,27 @@ div#grid {
   z-index: -10;
 }
 
-div#boStatistics {
-  
+div#messageFrame {
+  background: #333;
+  color: #eee;
+  font-weight: bold;
+  padding: 2px;
+}
+
+div#messageLog {
+  background: #666;
+  border: 1px solid magenta;
+  height: 85px;
+  max-height:85px;
+  overflow-y: scroll;
 }
 
 div#splash {
   border: 0px solid black;
-  width: 100%;
   text-align: center;
 }
+
 div.pane {
-  width: 100%;
   position: relative;
   display: none;
 }
@@ -47,13 +64,8 @@ div.contentPane {
   margin-top: 50px;
 }
 
-
 .hidden {
   display: none
-}
-
-#boStastics {
-    background: #EEEEEE;
 }
 
 .clickableArt:hover {

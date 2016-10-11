@@ -5,10 +5,10 @@ define(function(require) {
   var art = require('../artwork');
 
   function init() {
-    paneUtil.createArtDiv(art['map']['dorm'],'dorm','map',60,30);
-    paneUtil.createArtDiv(art['map']['bar'],'bar','map',30,20);
-    paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,10);
-    paneUtil.createArtDiv(art['map']['library'],'library','map',30,30);
+    paneUtil.createArtDiv(art['map']['dorm'],'dorm','map',60,20);
+    paneUtil.createArtDiv(art['map']['bar'],'bar','map',30,12);
+    paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,8);
+    paneUtil.createArtDiv(art['map']['library'],'library','map',20,23);
     paneUtil.createArtDiv(art['map']['frat'],'frat','map',5,2);
   }
 

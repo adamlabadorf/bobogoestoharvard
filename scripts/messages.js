@@ -1,23 +1,14 @@
 define(function(require) {
   var content = []
+  var log_stamp = 0;
 
   function init() {
-    _tick()
   }
 
   function msg(text) {
-    content.push(text);
-    _render();
-  }
-
-  function _render() {
-    $("#messageFrame").html(content.join("<br>"));
-  }
-
-  function _tick() {
-    content = content.slice(1, content.length);
-    _render();
-    setTimeout(_tick, 5000);
+    log_stamp += 1;
+    prefix = "[ BoBo Time: "+log_stamp+" ] ";
+    $("#messageLog").prepend("<span class='log'>"+prefix+text+"</span><br/>");
   }
 
   return {
