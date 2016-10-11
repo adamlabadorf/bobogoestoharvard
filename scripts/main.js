@@ -5,6 +5,7 @@ define(function (require) {
   var statsView = require('./boStatistics');
   var paneUtil = require('./paneUtil');
   var msg = require('./messages');
+  var clock = require('./gameClock');
 
   function _clickCell(row, col) {
     console.log('Clicked on: ', row, col);
@@ -17,6 +18,7 @@ define(function (require) {
     panes.init();
     statsView.init();
     msg.init();
+    clock.init();
   }
 
   function main() {
@@ -25,8 +27,8 @@ define(function (require) {
 
     _initModules();
     paneUtil.setGridVisible(true);
-    panes.activatePane('splash');
-    //panes.activatePane('boLibrary');
+    //panes.activatePane('splash');
+    panes.activatePane('boLibrary');
   }
 
   main();

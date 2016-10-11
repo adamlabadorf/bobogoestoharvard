@@ -17,14 +17,17 @@ define(function (require) {
     _state['boDrunkitude'] = 0;
   }
 
-  function state() {
-    return _state;
+  function state(label) {
+    return _state[label];
   }
 
   function changeStat(label, delta) {
-    _state[label] += delta;
-    _invokeModelObservers(label, delta);
-    msg.msg("+ " + delta + " " + label);
+    var oldValue = _state[label];
+    _state[label] = Math.max(0, _state[label] + delta);
+    if(oldValue != _state[label]) {
+      msg.msg("+ " + delta + " " + label);
+      _invokeModelObservers(label, delta);
+    }
   }
 
   function onModelUpdate(observer) {
@@ -37,11 +40,11 @@ define(function (require) {
     }
   }
 
-    return {
-        init: init,
-        state: state,
-        changeStat: changeStat,
-        onModelUpdate: onModelUpdate
-    };
+  return {
+      init: init,
+      state: state,
+      changeStat: changeStat,
+      onModelUpdate: onModelUpdate
+  };
 });
 

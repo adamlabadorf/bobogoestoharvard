@@ -26,8 +26,13 @@ define(function(require) {
     currentPane.draw();
   }
 
+  function getCurrentPane() {
+      return currentPane;
+  }
+
   return {
     init: initPanes,
-    activatePane: activatePane
+    activatePane: activatePane,
+    getCurrentPane: getCurrentPane
   };
 });
