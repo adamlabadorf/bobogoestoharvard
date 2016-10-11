@@ -26,7 +26,7 @@ define(function (require) {
     console.log(x.slice(1, x.length));
 
     _initModules();
-    paneUtil.setGridVisible(true);
+    paneUtil.setGridVisible(false);
     panes.activatePane('splash');
     //panes.activatePane('boLibrary');
   }

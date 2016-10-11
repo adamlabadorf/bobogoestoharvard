@@ -28,7 +28,7 @@ define(function(require) {
     timeSpentInLibrary += 1;
     if(timeSpentInLibrary % 3 == 0) {
       bobo.changeStat('boCharm', -1);
-      bobo.changeStat('boKnowlege', 1);
+      bobo.changeStat('boKnowledge', 1);
     }
   }
 
@@ -90,13 +90,13 @@ define(function(require) {
             if(i == answer) {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoCORRECT!!!!</h2>');
-                  bobo.changeStat('boKnowlege', 5);
-                  bobo.changeStat('boTurn', 1);
+                  bobo.changeStat('boKnowledge', 5);
+                  bobo.changeStat('boMoves', 1);
               });
             } else {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoWRONG!!!!</h2>');
-                  bobo.changeStat('boTurn', 1);
+                  bobo.changeStat('boMoves', 1);
               });
             }
           }
@@ -108,7 +108,7 @@ define(function(require) {
       bobo.changeStat('boCharm', 1);
       charmToMineForFunReading -= 1;
     }
-    bobo.changeStat('boTurn', 1);
+    bobo.changeStat('boMoves', 1);
   }
 
   init()

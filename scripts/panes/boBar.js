@@ -63,7 +63,7 @@ define(function(require) {
     bobo.changeStat('boBucks', -drink['cost']);
     bobo.changeStat('boCharm', drink['charmImpact']);
     bobo.changeStat('boDrunkitude', 1);
-    bobo.changeStat('boTurn', 1);
+    bobo.changeStat('boMoves', 1);
   }
 
    init()

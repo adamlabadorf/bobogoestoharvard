@@ -1,5 +1,6 @@
 define(function(require) {
-  var bobo = require('bobo');
+  var bobo = require('bobo'),
+      statDeps;
 
   function init() {
       bobo.onModelUpdate(_update)
@@ -11,8 +12,8 @@ define(function(require) {
     $("#boStat_boCharm").text(bobo.state('boCharm'));
     $("#boStat_boConquests").text(bobo.state('boConquests'));
 
-    $("#boStat_boTurn").text(bobo.state('boTurn'));
-    $("#boStat_boKnowlege").text(bobo.state('boKnowlege'));
+    $("#boStat_boMoves").text(bobo.state('boMoves'));
+    $("#boStat_boKnowledge").text(bobo.state('boKnowledge'));
     $("#boStat_boAcademicCredits").text(bobo.state('boAcademicCredits'));
 
     $("#boStat_boBucks").text(bobo.state('boBucks'));
