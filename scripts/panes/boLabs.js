@@ -21,7 +21,7 @@ define(function (require) {
     function setPaneManager(paneManager) {
       this.paneManager = paneManager;
       var mePanes = this.paneManager;
-      $("#boLabs_exit").click(function() { mePanes.activatePane('map'); });
+      $("#boLabs_exit").click(function() { mePanes.activatePane('boMap'); });
     }
 
     function draw() {

@@ -37,7 +37,7 @@ define(function (require) {
     paneUtil.setGridVisible(false);
 
     //panes.activatePane('splash');
-    panes.activatePane('map');
+    panes.activatePane('boMap');
     //panes.activatePane('boLibrary');
 
   }

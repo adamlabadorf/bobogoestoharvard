@@ -45,7 +45,7 @@ define(function(require) {
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
     var mePanes = this.paneManager;
-    $("#boBar_exit").click(function() { mePanes.activatePane('map'); });
+    $("#boBar_exit").click(function() { mePanes.activatePane('boMap'); });
 
     // Hook up the drink buttons
     for(var drinkName in DRINK_DATA) {

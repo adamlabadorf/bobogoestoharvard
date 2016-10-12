@@ -5,11 +5,12 @@ define(function(require) {
   var initPanes, activatePane;
 
   initPanes = function() {
-    panes['splash'] = require('panes/splash');
+    panes['boSplash'] = require('panes/boSplash');
     panes['gameBover'] = require('panes/gameBover');
     panes['boBar'] = require('panes/boBar');
     panes['boLibrary'] = require('panes/boLibrary');
-    panes['map'] = require('panes/map');
+    panes['boMap'] = require('panes/boMap');
+    panes['boGym'] = require('panes/boGym');
     panes['boLabs'] = require('panes/boLabs');
 
     for (paneName in panes) {

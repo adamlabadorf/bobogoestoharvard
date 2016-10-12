@@ -11,7 +11,7 @@ define(function(require) {
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
     var mePanes = this.paneManager;
-    $("#boLibrary_exit").click(function() { mePanes.activatePane('map'); });
+    $("#boLibrary_exit").click(function() { mePanes.activatePane('boMap'); });
     $("#boLibrary_study").click(_study);
     $("#boLibrary_readForFun").click(_readForFun);
   }

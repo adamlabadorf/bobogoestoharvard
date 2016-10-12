@@ -18,7 +18,7 @@ define(function(require) {
     var me = this;
     $('div#splash').show();
     $('button#goToMap').click(
-      function() { me.paneManager.activatePane('map') }
+      function() { me.paneManager.activatePane('boMap') }
     );
     $('#cheat_givePoint').click(
         function() { bobo.changeStat('boPoints', 1); }

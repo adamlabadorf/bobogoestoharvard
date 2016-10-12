@@ -3,7 +3,6 @@ define(function(require) {
   var map = {};
   var paneUtil = require('../paneUtil');
   var art = require('../artwork');
-  var birdPos = [0,0];
   var spriteMap = {
         'dorm': [60,20]
         ,'bar': [30,12]
@@ -19,7 +18,7 @@ define(function(require) {
     $.each(spriteMap,function(k,v) {
       var sprite = art.createSprite('map',k);
       sprite.pos = v;
-      paneUtil.createArtDiv(sprite.current,k,'map',v[0],v[1]);
+      paneUtil.createArtDiv(sprite.current,k,'boMap',v[0],v[1]);
       sprites[k] = sprite;
     });
     sprites['birds'].step = function() {
@@ -32,15 +31,16 @@ define(function(require) {
     var mePanes = map.paneManager;
     $("#bar").click(function() { mePanes.activatePane('boBar'); });
     $("#library").click(function() { mePanes.activatePane('boLibrary'); });
+    $("#gym").click(function() { mePanes.activatePane('boGym'); });
     $("#labs").click(function() { mePanes.activatePane('boLabs'); });
   }
 
  function hide() {
-    $('div#map').fadeOut();
+    $('div#boMap').fadeOut();
  }
 
  function draw() {
-    $('div#map').fadeIn();
+    $('div#boMap').fadeIn();
   }
 
   function tick() {
