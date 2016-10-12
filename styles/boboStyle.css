@@ -26,6 +26,10 @@ div#paneFrame {
   border: 1px solid rgba(255,255,0,255);
 }
 
+div#paneFrame > div {
+  display: none;
+}
+
 div#grid {
   position: relative;
   top: -10px;
