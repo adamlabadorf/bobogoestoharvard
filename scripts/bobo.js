@@ -48,14 +48,14 @@ define(function (require) {
 
     statLimits = {
         'boPoints':[-1e10,1e10],
-    'boConquests':[0,1e10],
-    'boAcademicCredits':[0,1e10],
-    'boBucks':[-1e10,1e10],
-    'boMoves':[0,1e10],
-    'boCharm':[0,200],
-    'boKnowledge':[0,200],
-    'boStrength':[0,200],
-    'boDrunkitude':[0,200]
+        'boConquests':[0,1e10],
+        'boAcademicCredits':[0,1e10],
+        'boBucks':[-1e10,1e10],
+        'boMoves':[0,1e10],
+        'boCharm':[0,200],
+        'boKnowledge':[0,200],
+        'boStrength':[0,200],
+        'boDrunkitude':[0,200]
     }
 
     // delta_stats is an array of 2-ples that define the inflection points
@@ -95,19 +95,9 @@ define(function (require) {
   }
 
   // Attempt to change the statistic named label (in _state) by delta amount.
-  // If the change is not feasible (because it causes us to be < 0) return
-  // false, otherwise change the stat and return true.  TODO: Figure out how to
-  // put this code in a critical section, we're introducing a race condition
-  // here where we could verify that we won't go below zero, asychronously call
-  // changeStat again to decrement some amount, then return to the original
-  // invocation of changeStat where we might now be going below 0.  This is bad
-  // voodoo and bad voodoo is bad.
+  // bad voodoo and bad voodoo is bad.
   function changeStat(label, delta) {
     var oldValue = _state[label];
-
-    if(oldValue + delta < 0) {
-        return false;
-    }
 
     setStat(label, _state[label] + delta);
     if(oldValue != _state[label]) {
@@ -122,8 +112,6 @@ define(function (require) {
       }
       _invokeModelObservers(label, delta);
     }
-
-    return true;
   }
 
   function onModelUpdate(observer) {
