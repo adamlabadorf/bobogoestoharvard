@@ -1,5 +1,8 @@
 define(function(require) {
 
+  var grid_width = 134,
+      grid_height = 90;
+
   String.prototype.replaceAll = function(search, replace) {
     if (replace === undefined) {
         return this.toString();
@@ -17,7 +20,7 @@ define(function(require) {
     return verbText;
   }
 
-  placeDiv = function(x,y,divId) {
+  placeDiv = function(divId,x,y) {
     elem = $('#'+divId)
     elem.css({
       'position':'absolute'
@@ -26,10 +29,10 @@ define(function(require) {
     });
   }
 
-  placeVerbatimDiv = function(x,y,divId) {
+  placeVerbatimDiv = function(divId,x,y) {
     elem = $('#'+divId);
     elem.html(verbatimText(elem[0].innerHTML));
-    placeDiv(x,y,divId);
+    placeDiv(divId,x,y);
   }
 
   createArtDiv = function(text,artId,targetId,x=0,y=0) {
@@ -39,7 +42,16 @@ define(function(require) {
     $(div).attr('class','clickableArt');
     $(div).html(text);
     $('#'+targetId).append(div);
-    placeVerbatimDiv(x,y,artId);
+    placeVerbatimDiv(artId,x,y);
+  }
+
+  updateArtDiv = function(text,artId,x=0,y=0) {
+    var verbText = verbatimText(text.join('\n')),
+        elem = $('#'+artId);
+    if(verbText != elem.html()) {
+      elem.html(verbText);
+    }
+    placeDiv(artId,x,y);
   }
 
   createGrid = function() {
@@ -47,7 +59,7 @@ define(function(require) {
     elem = $('#grid')[0];
     grid_ones = Array();
     grid_tens = Array();
-    max_grid_size = 134;
+    max_grid_size = Math.max(grid_width,grid_height);
     for(i=2; i<max_grid_size; i++) {
       if(i%10 == 0) {
         grid_tens.push(Math.round(i/10));
@@ -63,13 +75,13 @@ define(function(require) {
     elem.innerHTML = '   '+grid_tens.filter(function(x) { return x!='X'}).join('')+'\n';
     elem.innerHTML += '   '+grid_ones.join('')+'\n';
 
-    for(i=0; i<grid_tens.length; i++) {
+    for(i=0; i<grid_height; i++) {
       if(grid_tens[i]<10) {
         elem.innerHTML += ' ';
       }
       elem.innerHTML += grid_tens[i].toString().replace('X','  ')+grid_ones[i]+'\n';
     }
-    placeVerbatimDiv(0,0,'grid');
+    placeVerbatimDiv('grid',0,0);
   }
   createGrid();
   setGridVisible = function(set_visible=true) {
@@ -83,9 +95,11 @@ define(function(require) {
   setGridVisible();
 
   return {
-    setGridVisible: setGridVisible
+    grid_size: {'width':grid_width,'height':grid_height}
+    ,setGridVisible: setGridVisible
     ,verbatimText: verbatimText
     ,createArtDiv: createArtDiv
+    ,updateArtDiv: updateArtDiv
     ,placeDiv: placeDiv
     ,placeVerbatimDiv: placeVerbatimDiv
   }

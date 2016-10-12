@@ -2,95 +2,31 @@ define(function(require) {
 
   var art = {};
 
-  //β
-  //βΩβ
+  art['map'] = require('scripts/artwork/map.js');
 
-  art['map'] = {
-   dorm:[' ______________',
-         '/____________ /|',
-         '|   BoDorm   | |',
-         '|   _    _   | |',
-         '|  | |  | |  | |',
-         '|  |_|  |_|  | |',
-         '|   _    _   | |',
-         '|  | |  |@|  | |',
-         '|  |_|  |_|  | |',
-         '|   _    _   | |',
-         '|  | |  | |  | |',
-         '|  |_|  |_|  | |',
-         '|     __     | |',
-         '|    |  |    | .',
-         '|____|__|____|/'
-   ],
-   bar:[' ________________________',
-        '/______________________ /|',
-        '|  _    _BoBar _    _  | |',
-        '| |@|  |@|    | |  |@| | |',
-        '| |_|  |_|    | |  |_| | .',
-        '|_____________|_|______|/'
-   ],
-   gym:[
-        '    __________________  ',
-        ' ___|Get_Yo BoBuff_On|__',
-        '/________|______|_______/|',
-        '|                      | |',
-        '| @-@    @-@     v   v | |',
-        '| i---i  i--i  o-@ o-@ | |',
-        '|----------------------| |',
-        '|      BoGym     ___   | |',
-        '|               |   |  | .',
-        '|_______________|___|__|/'
-   ],
-   library:[
-        ' ___________________  ',
-        ' |Get_yo BoLearn On|  ',
-        '  ____|______|_____  ',
-        ' /                 \\ ',
-        '/___________________\\',
-        '|                    |',
-        '|  BoLibrary         |',
-        '| __________________ |',
-        '| |/ \\| |/  \\| |/ \\| |',
-        '| |   | | -- | |   | |',
-        '| |   | | || | |   | |',
-        '|_|---|_|----|_|---|_|'
-   ],
-   frat:[
-        '         ___',
-        '       ___  --_',
-        '    _--   --_  -_',
-        '  _-  β Ω β  -_  \\',
-        ' /  _       _  \\/|',
-        ' | | |  |  | | | |',
-        ' | |_|  |  |_| | |',
-        ' |  _   O   _  | |',
-        ' | | |  |  | | | |',
-        ' | |_|  |  |_| | |',
-        ' |      |      | |',
-        ' /------------/  |',
-        '/____________/ | |',
-        '|    |  |    | | |',
-        '|____|__|____| / |',
-        '|++++|  |++++|/|/',
-        '|---/---/----| /',
-        '|__/---/r____|/'
-   ],
-   labs:[
-        '         --',
-        '       /\\  \\',
-        '      / /\\  \\',
-        '     / /xX\\  \\',
-        '    / /xXxX\\  \\',
-        '   / / Bo  |  |',
-        '  / / Labs |  |',
-        ' / /XxXxXxXx\\  \\',
-        '/ /x x x  _  \\/|',
-        '|        | | | |',
-        '|________|_|_|/'
-   ]
+  createSprite = function(collection,name,loop=true) {
+    var sprite = {};
+    sprite.art = art[collection][name];
+    sprite.current_i = 0;
+    sprite.current = sprite.art[sprite.current_i];
+    sprite.step = function() {
+      // override this if you need to add more behavior to sprite on step
+    }
+    sprite.next = function() { // moves to next image in art sequence
+      if(loop) {
+        this.current_i = (this.current_i+1)%this.art.length;
+      } else {
+        this.current_i = Math.min(this.current_i+1,this.art.length);
+      }
+      this.current = this.art[this.current_i];
+      this.step();
+      return this.current;
+    }
+    return sprite;
   }
 
-
-  return art;
+  return {
+    createSprite: createSprite
+  };
 
 });
