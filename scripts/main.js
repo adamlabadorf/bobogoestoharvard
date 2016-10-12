@@ -22,8 +22,17 @@ define(function (require) {
   }
 
   function main() {
-
     _initModules();
+
+    // Stop the game if turns gets to 0
+    bobo.onModelUpdate(function(label, delta) {
+        if(label == 'boMoves') {
+            var moves = bobo.state('boMoves');
+            if(moves <= 0) {
+                panes.activatePane('gameBover');
+            }
+        }
+    });
 
     paneUtil.setGridVisible(false);
 

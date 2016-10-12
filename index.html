@@ -13,8 +13,8 @@
             <tr>
             <td id="boCell_boPoints">
                 <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-            <td id="boCell_boTurn">
-                <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
+            <td id="boCell_boMoves">
+                <b>BoMoves:</b> <span id="boStat_boMoves"> </span> </td>
             <td id="boCell_boBucks">
                 <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
             </tr>
@@ -53,28 +53,17 @@
           <button id='cheat_giveCharm'>CHEAT: Give charm</button>
         </div>
 
-        <div id="map">
+        <div class='pane ' id='gameBover'>
+          <h1> BoBo can no longer goes to Harvard! :-( :-( :-( </h1>
         </div>
 
-        <div class='pane contentPane' id='boStastics'>
-            <table width=100% border=1>
-            <tr>
-                <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-                <td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
-                <td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-                <td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-            </tr>
-            <tr>
-                <td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
-                <td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
-                <td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
-                <td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
-            </tr>
-            </table>
+ 
+        <div id="map">
         </div>
 
         <div class='pane contentPane' id='boBar'>
             Welcome to the BoBar, what would you like to do?
+            <div id="boBar_msg"></div>
             <button id="boBar_exit">Exit</button>
 
             <h2> Pick a poison to purchase</h2>

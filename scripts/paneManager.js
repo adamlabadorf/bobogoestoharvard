@@ -6,6 +6,7 @@ define(function(require) {
 
   initPanes = function() {
     panes['splash'] = require('panes/splash');
+    panes['gameBover'] = require('panes/gameBover');
     panes['boBar'] = require('panes/boBar');
     panes['boLibrary'] = require('panes/boLibrary');
     panes['map'] = require('panes/map');

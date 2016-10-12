@@ -91,12 +91,12 @@ define(function(require) {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoCORRECT!!!!</h2>');
                   bobo.changeStat('boKnowledge', 5);
-                  bobo.changeStat('boMoves', 1);
+                  bobo.changeStat('boMoves', -1);
               });
             } else {
               $('#boLibrary_rc_' + i).click(function() {
                   $('#boLibrary_text').html('<h2>BoWRONG!!!!</h2>');
-                  bobo.changeStat('boMoves', 1);
+                  bobo.changeStat('boMoves', -1);
               });
             }
           }
@@ -108,7 +108,7 @@ define(function(require) {
       bobo.changeStat('boCharm', 1);
       charmToMineForFunReading -= 1;
     }
-    bobo.changeStat('boMoves', 1);
+    bobo.changeStat('boMoves', -1);
   }
 
   init()
