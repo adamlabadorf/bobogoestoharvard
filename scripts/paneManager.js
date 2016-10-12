@@ -9,6 +9,7 @@ define(function(require) {
     panes['boBar'] = require('panes/boBar');
     panes['boLibrary'] = require('panes/boLibrary');
     panes['map'] = require('panes/map');
+    panes['boLabs'] = require('panes/boLabs');
 
     for (paneName in panes) {
       panes[paneName].setPaneManager(this);

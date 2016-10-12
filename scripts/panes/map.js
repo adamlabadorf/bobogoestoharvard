@@ -10,14 +10,15 @@ define(function(require) {
     paneUtil.createArtDiv(art['map']['gym'],'gym','map',70,8);
     paneUtil.createArtDiv(art['map']['library'],'library','map',20,23);
     paneUtil.createArtDiv(art['map']['frat'],'frat','map',5,2);
+    paneUtil.createArtDiv(art['map']['labs'],'labs','map',82,23);
   }
-
 
   function setPaneManager(paneManager) {
     this.paneManager = paneManager;
     var mePanes = this.paneManager;
     $("#bar").click(function() { mePanes.activatePane('boBar'); });
     $("#library").click(function() { mePanes.activatePane('boLibrary'); });
+    $("#labs").click(function() { mePanes.activatePane('boLabs'); });
   }
 
  function hide() {

@@ -1,117 +1,154 @@
 <html>
 <head>
-	<script data-main='scripts/app' src='scripts/require.js'></script>
-	<script src='scripts/jquery.js'></script>
-	<link rel='stylesheet' type='text/css' href='styles/boboStyle.css'>
+    <script data-main='scripts/app' src='scripts/require.js'></script>
+    <script src='scripts/jquery.js'></script>
+    <link rel='stylesheet' type='text/css' href='styles/boboStyle.css'>
 </head>
 <body>
 
 <div id='gameFrame'>
 
-	<div id='boStastics'>
-		<table width=100% border=1>
-			<tr>
-			<td id="boCell_boPoints">
-				<b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-			<td id="boCell_boTurn">
-				<b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
-			<td id="boCell_boBucks">
-				<b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
-			</tr>
-			<tr>
-			<td id="boCell_boCharm">
-				<b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
-			<td id="boCell_boKnowlege">
-				<b>BoKnowledge:</b> <span id="boStat_boKnowlege"> </span> </td>
-			<td id="boCell_boStrength">
-				<b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
-			</tr>
-			<td id="boCell_boConquests">
-				<b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-			<td id="boCell_boAcademicCredits">
-				<b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-			<td id="boCell_boDrunkitude">
-				<b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
-			<tr>
-			</tr>
-		</table>
-	</div>
+    <div id='boStastics'>
+        <table width=100% border=1>
+            <tr>
+            <td id="boCell_boPoints">
+                <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
+            <td id="boCell_boTurn">
+                <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
+            <td id="boCell_boBucks">
+                <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
+            </tr>
+            <tr>
+            <td id="boCell_boCharm">
+                <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
+            <td id="boCell_boKnowlege">
+                <b>BoKnowledge:</b> <span id="boStat_boKnowlege"> </span> </td>
+            <td id="boCell_boStrength">
+                <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
+            </tr>
+            <td id="boCell_boConquests">
+                <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
+            <td id="boCell_boAcademicCredits">
+                <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
+            <td id="boCell_boDrunkitude">
+                <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
+            <tr>
+            </tr>
+        </table>
+    </div>
 
-	<div id='paneFrame'>
+    <div id='paneFrame'>
 
-		<div id='grid' class='verbatim'></div>
+        <div id='grid' class='verbatim'></div>
 
-		<div class='pane ' id='splash'>
-		  <h1> BoBo goes to Harvard </h1>
+        <div class='pane ' id='splash'>
+          <h1> BoBo goes to Harvard </h1>
 
-		  Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
-		  <br/>
-		  <br/>
+          Can BoBo handle the challenge?  It's up to YOU to guide BoBo to success!
+          <br/>
+          <br/>
 
-		  <button id='goToMap'>Map</button>
-		  <button id='cheat_givePoint'>CHEAT: Give point</button>
-		  <button id='cheat_giveCharm'>CHEAT: Give charm</button>
-		</div>
+          <button id='goToMap'>Map</button>
+          <button id='cheat_givePoint'>CHEAT: Give point</button>
+          <button id='cheat_giveCharm'>CHEAT: Give charm</button>
+        </div>
 
-		<div id="map">
-		</div>
+        <div id="map">
+        </div>
 
-		<div class='pane contentPane' id='boStastics'>
-			<table width=100% border=1>
-			<tr>
-				<td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
-				<td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
-				<td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
-				<td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
-			</tr>
-			<tr>
-				<td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
-				<td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
-				<td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
-				<td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
-			</tr>
-			</table>
-		</div>
+        <div class='pane contentPane' id='boStastics'>
+            <table width=100% border=1>
+            <tr>
+                <td> <b>BoPoints:</b> <span id="boStat_boPoints"> </span> </td>
+                <td> <b>BoBucks:</b> <span id="boStat_boBucks"> </span> </td>
+                <td> <b>BoConquests:</b> <span id="boStat_boConquests"> </span> </td>
+                <td> <b>BoAcademicCredits:</b> <span id="boStat_boAcademicCredits"> </span> </td>
+            </tr>
+            <tr>
+                <td> <b>BoStrength:</b> <span id="boStat_boStrength"> </span> </td>
+                <td> <b>BoCharm:</b> <span id="boStat_boCharm"> </span> </td>
+                <td> <b>BoDrunkitude:</b> <span id="boStat_boDrunkitude"> </span> </td>
+                <td> <b>BoTurn:</b> <span id="boStat_boTurn"> </span> </td>
+            </tr>
+            </table>
+        </div>
 
-		<div class='pane contentPane' id='boBar'>
-			Welcome to the BoBar, what would you like to do?
-			<button id="boBar_exit">Exit</button>
+        <div class='pane contentPane' id='boBar'>
+            Welcome to the BoBar, what would you like to do?
+            <button id="boBar_exit">Exit</button>
 
-			<h2> Pick a poison to purchase</h2>
-			<table border='1'>
-				<tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
-				<tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
-				<tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
-				<tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
-				<tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
-				<tr><td> <button id="boBar_good">Drink to remember the best times</button> </td><td> 30 </td></tr>
-				<tr><td> <button id="boBar_bad">Drink to remember the worst times</button> </td><td> 1 </td></tr>
-			</table>
-			<h2>Socialize</h2>
-			<table>
-				<button id='boBar_game_line'>Try a BoBo line</button>
-				<button id='boBar_game_tender'>Talk to the 'tender</button>
-				<button id='boBar_game_darts'>Play some BoBo darts</button>
-			</table>
-		</div>
+            <h2> Pick a poison to purchase</h2>
+            <table border='1'>
+                <tr><td> <b> Drink </b> </td><td> <b> How many BoBucks </b></td></th>
+                <tr><td> <button id="boBar_whisky">Whisky Drink</button> </td><td> 15 </td></tr>
+                <tr><td> <button id="boBar_vodka">Vodka Drink</button> </td><td> 10 </td></tr>
+                <tr><td> <button id="boBar_lager">Lager Drink</button> </td><td> 5 </td></tr>
+                <tr><td> <button id="boBar_cider">Cider Drink</button> </td><td> 8 </td></tr>
+                <tr><td> <button id="boBar_good">Drink to remember the best times</button> </td><td> 30 </td></tr>
+                <tr><td> <button id="boBar_bad">Drink to remember the worst times</button> </td><td> 1 </td></tr>
+            </table>
+            <h2>Socialize</h2>
+            <table>
+                <button id='boBar_game_line'>Try a BoBo line</button>
+                <button id='boBar_game_tender'>Talk to the 'tender</button>
+                <button id='boBar_game_darts'>Play some BoBo darts</button>
+            </table>
+        </div>
 
-		<div class='pane contentPane'id="boLibrary">
-			Welcome to the BoLibrary, what would you like to do?
+        <div class='pane contentPane'id="boLibrary">
+            Welcome to the BoLibrary, what would you like to do?
 
-			<h2> What to do? </h2>
-			<button id="boLibrary_exit">Exit</button>
-			<button id="boLibrary_study">Study</button>
-			<button id="boLibrary_readForFun">Read for fun</button>
+            <h2> What to do? </h2>
+            <button id="boLibrary_exit">Exit</button>
+            <button id="boLibrary_study">Study</button>
+            <button id="boLibrary_readForFun">Read for fun</button>
 
-			<div id="boLibrary_text"></div>
-		</div>
+            <div id="boLibrary_text"></div>
+        </div>
 
-	</div>
+        <div class='pane contentPane' id='boLabs'>
+            <h2>BoLabs - where magical sciencing happens</h2>
+            <table class="invisible">
+                <tr>
+                    <td>boStrength</td>
+                    <td><button id="boLabs_boStrength_m10">-10</button></td>
+                    <td><button id="boLabs_boStrength_m1">-1</button></td>
+                    <td><button id="boLabs_boStrength_p1">+1</button></td>
+                    <td><button id="boLabs_boStrength_p10">+10</button></td>
+                </tr>
+                <tr>
+                    <td>boCharm</td>
+                    <td><button id="boLabs_boCharm_m10">-10</button></td>
+                    <td><button id="boLabs_boCharm_m1">-1</button></td>
+                    <td><button id="boLabs_boCharm_p1">+1</button></td>
+                    <td><button id="boLabs_boCharm_p10">+10</button></td>
+                </tr>
+                <tr>
+                    <td>boKnowledge</td>
+                    <td><button id="boLabs_boKnowledge_m10">-10</button></td>
+                    <td><button id="boLabs_boKnowledge_m1">-1</button></td>
+                    <td><button id="boLabs_boKnowledge_p1">+1</button></td>
+                    <td><button id="boLabs_boKnowledge_p10">+10</button></td>
+                </tr>
+                <tr>
+                    <td>boDrunkitude</td>
+                    <td><button id="boLabs_boDrunkitude_m10">-10</button></td>
+                    <td><button id="boLabs_boDrunkitude_m1">-1</button></td>
+                    <td><button id="boLabs_boDrunkitude_p1">+1</button></td>
+                    <td><button id="boLabs_boDrunkitude_p10">+10</button></td>
+                </tr>
 
-	<div id='messageFrame'>
-		Messages:<br/>
-		<div id='messageLog'>
-	</div>
+                <tr>
+                    <td><button id="boLabs_exit">To Map</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id='messageFrame'>
+        Messages:<br/>
+        <div id='messageLog'>
+    </div>
 
 </div>
 

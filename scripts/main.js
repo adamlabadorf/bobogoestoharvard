@@ -22,13 +22,15 @@ define(function (require) {
   }
 
   function main() {
-    x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    console.log(x.slice(1, x.length));
 
     _initModules();
+
     paneUtil.setGridVisible(false);
-    panes.activatePane('splash');
+
+    //panes.activatePane('splash');
+    panes.activatePane('map');
     //panes.activatePane('boLibrary');
+
   }
 
   main();
