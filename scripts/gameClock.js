@@ -12,7 +12,7 @@ define(function(require) {
       currentPane.tick();
     }
     dm.tick();
-    setTimeout(_tick, 5000);
+    setTimeout(_tick, 1000);
   }
 
   return {
