@@ -6,6 +6,7 @@ define(function (require) {
       default_delta_stat,
       interpolate,
       takeBoAction,
+      statLimits,
       statDependencies;
 
   interpolate = function(x,delta_stat) {
@@ -45,6 +46,17 @@ define(function (require) {
     _state['boStrength'] = 50;
     _state['boDrunkitude'] = 0;
 
+    statLimits = {
+        'boPoints':[-1e10,1e10],
+    'boConquests':[0,1e10],
+    'boAcademicCredits':[0,1e10],
+    'boBucks':[-1e10,1e10],
+    'boMoves':[0,1e10],
+    'boCharm':[0,200],
+    'boKnowledge':[0,200],
+    'boStrength':[0,200],
+    'boDrunkitude':[0,200]
+    }
 
     // delta_stats is an array of 2-ples that define the inflection points
     // of delta for the output stat
@@ -74,15 +86,26 @@ define(function (require) {
     return _state[label];
   }
 
+  function setStat(stat,val) {
+    if(stat in statLimits) {
+       _state[stat] = Math.max(statLimits[stat][0],Math.min(val,statLimits[stat][1]));
+    } else {
+       _stat[stat] = val;
+    }
+  }
+
   function changeStat(label, delta) {
     var oldValue = _state[label];
-    _state[label] = Math.max(0, _state[label] + delta);
+    setStat(label, _state[label] + delta);
     if(oldValue != _state[label]) {
       msg.msg("+ " + delta + " " + label);
       for(depStat in statDependencies[label]) {
-      	var stat_delta = interpolate(_state[label],statDependencies[label][depStat]);
-      	_state[depStat] += stat_delta;
-	msg.msg(depStat + " gets "+ stat_delta);
+        var stat_delta = interpolate(_state[label],statDependencies[label][depStat]),
+            prev_stat = _state[depStat];
+        setStat(depStat,_state[depStat]+stat_delta);
+        if(_state[depStat] != prev_stat) {
+          msg.msg(depStat + " gets "+ stat_delta);
+        }
       }
       _invokeModelObservers(label, delta);
     }
