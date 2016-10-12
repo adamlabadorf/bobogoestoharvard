@@ -30,8 +30,8 @@ define(function(require) {
   }
 
   placeVerbatimDiv = function(divId,x,y) {
-    elem = $('#'+divId);
-    elem.html(verbatimText(elem[0].innerHTML));
+    elem = $('#'+divId).first();
+    elem.html(verbatimText(elem.html()));
     placeDiv(divId,x,y);
   }
 
@@ -56,7 +56,7 @@ define(function(require) {
 
   createGrid = function() {
     var elem, grid_ones, grid_tens, max_grid_size;
-    elem = $('#grid')[0];
+    elem = $('div#grid')[0];
     grid_ones = Array();
     grid_tens = Array();
     max_grid_size = Math.max(grid_width,grid_height);
