@@ -23,7 +23,7 @@ define(function(require) {
         strength += ' SOTIRED';
     } else if(bobo.state('boTiredness')>0) {
         console.log('huh?');
-        strength += ' (boTiredness: '+bobo.state('boTiredness')+')';
+        strength += ' (boTiredness: '+Math.round(bobo.state('boTiredness'))+')';
     }
     $("#boStat_boStrength").text(strength);
     $("#boStat_boDrunkitude").text(Math.round(bobo.state('boDrunkitude')));

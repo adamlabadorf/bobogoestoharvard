@@ -19,6 +19,9 @@ table tbody tr td {
     color: #eee;
     padding: 2px;
 }
+div#boStatistics > table > tbody > tr > td {
+    width: 33%;
+}
 
 div#paneFrame {
   position: relative;
