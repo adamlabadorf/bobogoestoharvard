@@ -75,7 +75,8 @@ define(function(require) {
 
   function _drink(name) {
     var drink = DRINK_DATA[name];
-    if(bobo.changeStat('boBucks', -drink['cost'])) {
+    bobo.changeStat('boBucks', -drink['cost']);
+    if(bobo.state('boBucks')>0) {
       bobo.changeStat('boCharm', drink['charmImpact']);
       bobo.changeStat('boDrunkitude', 1);
       bobo.changeStat('boMoves', -1);
