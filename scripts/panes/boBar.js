@@ -78,7 +78,7 @@ define(function(require) {
     bobo.changeStat('boBucks', -drink['cost']);
     if(bobo.state('boBucks')>0) {
       bobo.changeStat('boCharm', drink['charmImpact']);
-      bobo.changeStat('boDrunkitude', 1);
+      bobo.changeStat('boDrunkitude', drink['strength']);
       bobo.changeStat('boMoves', -1);
       $('#boBar_msg').html("<h2> Gulp! </h2>");
     } else {
