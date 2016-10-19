@@ -21,9 +21,10 @@ define(function(require) {
       paneUtil.createArtDiv(sprite.current,k,'boMap',v[0],v[1]);
       sprites[k] = sprite;
     });
-    sprites['birds'].step = function() {
-      this.pos[0] = (this.pos[0]+1)%(paneUtil.grid_size.width-this.art.length);
-    };
+    sprites['birds'].step(function(sprite) {
+      console.log(sprite);
+      sprite.pos[0] = (sprite.pos[0]+1)%(paneUtil.grid_size.width-sprite.art.length);
+    });
   }
 
   function setPaneManager(paneManager) {
