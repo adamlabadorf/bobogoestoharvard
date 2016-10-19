@@ -1,6 +1,7 @@
 define(function(require) {
-  var pm = require('paneManager');
-  var dm = require('boDrunkManager');
+  var pm = require('paneManager'),
+      bobo = require('bobo'),
+      dm = require('boDrunkManager');
 
   function init() {
     _tick()
@@ -11,7 +12,7 @@ define(function(require) {
     if(currentPane != undefined) {
       currentPane.tick();
     }
-    dm.tick();
+    bobo.tick();
     setTimeout(_tick, 1000);
   }
 

@@ -43,7 +43,13 @@ define(function (require) {
     _state['boMoves'] = 200;
     _state['boCharm'] = 50;
     _state['boKnowledge'] = 50;
+
     _state['boStrength'] = 50;
+    _state['boTiredness'] = 0;
+    _state['boMaxTiredness'] = 20;
+    _state['boRecoveryRate'] = 0.5;
+    _state['boIsTired'] = false;
+
     _state['boDrunkitude'] = 0;
 
     statLimits = {
@@ -55,6 +61,7 @@ define(function (require) {
         'boCharm':[0,200],
         'boKnowledge':[0,200],
         'boStrength':[0,200],
+        'boTiredness':[0,_state['boMaxTiredness']],
         'boDrunkitude':[0,200]
     }
 
@@ -124,10 +131,16 @@ define(function (require) {
     }
   }
 
+  function tick() {
+    changeStat('boTiredness',-_state['boRecoveryRate']);
+    changeStat('boDrunkitude',-_state['boRecoveryRate']);
+  }
+
   return {
       init: init,
       state: state,
       changeStat: changeStat,
+      tick: tick,
       takeBoAction: takeBoAction,
       onModelUpdate: onModelUpdate
   };
