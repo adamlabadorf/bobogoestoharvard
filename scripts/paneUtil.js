@@ -43,6 +43,8 @@ define(function(require) {
     $(div).html(text);
     $('#'+targetId).append(div);
     placeVerbatimDiv(artId,x,y);
+
+    return $(div);
   }
 
   updateArtDiv = function(text,artId,x=0,y=0) {
