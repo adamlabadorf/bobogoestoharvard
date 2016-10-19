@@ -22,7 +22,6 @@ define(function(require) {
       sprites[k] = sprite;
     });
     sprites['birds'].step(function(sprite) {
-      console.log(sprite);
       sprite.pos[0] = (sprite.pos[0]+1)%(paneUtil.grid_size.width-sprite.art.length);
     });
   }
