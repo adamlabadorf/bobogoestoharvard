@@ -34,12 +34,14 @@ define(function(require) {
       sprites[k] = sprite;
       var spriteDiv = paneUtil.createArtDiv(sprite.current,k,'boGym',v.pos[0],v.pos[1]);
       spriteDiv.click(function() {
-        sprite.run(true);
-        bobo.changeStat('boStrength',1);
-        bobo.changeStat('boMoves',-1);
-        //bobo.changeStat('boTiredness',1);
-        boExercises[k].reps += 1;
-        $('#boGym_'+k).html(boExercises[k].reps);
+        if(!bobo.state('boIsTired')) {
+            sprite.run(true);
+            bobo.changeStat('boStrength',1);
+            bobo.changeStat('boMoves',-1);
+            bobo.changeStat('boTiredness',1);
+            boExercises[k].reps += 1;
+            $('#boGym_'+k).html(boExercises[k].reps);
+        }
       })
     });
   }
@@ -47,6 +49,7 @@ define(function(require) {
   function setPaneManager(paneManager) {
     gym.paneManager = paneManager;
     var mePanes = gym.paneManager;
+    $("#boGym_exit").click(function() { mePanes.activatePane('boMap'); });
   }
 
  function hide() {
@@ -58,6 +61,18 @@ define(function(require) {
   }
 
   function tick() {
+    var boMotivation = "Get your boButt moving!",
+        tiredness = bobo.state('boTiredness'),
+        maxTiredness = bobo.state('boMaxTiredness');
+    if(bobo.state('boIsTired')) {
+        boMotivation = "You're boBurnt out! Take a boBreak at the boBar or boSomething!";
+    } else if(tiredness > 0 && tiredness < 0.5*maxTiredness) {
+        boMotivation = "Oooooh yeah, boBeefin' and boBuffin'."
+    } else if(tiredness > 0.5*maxTiredness && tiredness < maxTiredness) {
+        boMotivation = "Feel the boBurn!!!";
+    }
+    $('#boGymStatus').html(boMotivation);
+
     $.each(sprites, function(label,sprite) {
       sprite.next()
       paneUtil.updateArtDiv(sprite.current,label,sprite.pos[0],sprite.pos[1]);
