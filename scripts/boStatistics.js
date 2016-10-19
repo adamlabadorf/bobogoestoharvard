@@ -17,7 +17,15 @@ define(function(require) {
     $("#boStat_boAcademicCredits").text(Math.round(bobo.state('boAcademicCredits')));
 
     $("#boStat_boBucks").text(Math.round(bobo.state('boBucks')));
-    $("#boStat_boStrength").text(Math.round(bobo.state('boStrength')));
+
+    var strength = Math.round(bobo.state('boStrength'));
+    if(bobo.state('boIsTired')) {
+        strength += ' SOTIRED';
+    } else if(bobo.state('boTiredness')>0) {
+        console.log('huh?');
+        strength += ' (boTiredness: '+bobo.state('boTiredness')+')';
+    }
+    $("#boStat_boStrength").text(strength);
     $("#boStat_boDrunkitude").text(Math.round(bobo.state('boDrunkitude')));
 
     if(delta > 0) {

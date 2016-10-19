@@ -97,7 +97,7 @@ define(function (require) {
     if(stat in statLimits) {
        _state[stat] = Math.max(statLimits[stat][0],Math.min(val,statLimits[stat][1]));
     } else {
-       _stat[stat] = val;
+       _state[stat] = val;
     }
   }
 
@@ -132,6 +132,14 @@ define(function (require) {
   }
 
   function tick() {
+    if(_state.boTiredness == _state.boMaxTiredness) {
+        setStat('boIsTired',true);
+    } else if(_state.boTiredness == 0) {
+        setStat('boIsTired',false);
+        // fire an event just to update stuffs
+        _invokeModelObservers('none',0);
+    }
+
     changeStat('boTiredness',-_state['boRecoveryRate']);
     changeStat('boDrunkitude',-_state['boRecoveryRate']);
   }
